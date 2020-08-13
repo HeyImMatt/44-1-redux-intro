@@ -19,3 +19,9 @@ function rootReducer(state=INITIAL_STATE, action) {
 }
 
 faceDiv.textContent = store.getState().face;
+
+faceBtns.addEventListener('click', (e) => {
+  store.dispatch({ type: e.target.id.toUpperCase() });
+  const currentFace = store.getState().face;
+  faceDiv.textContent = currentFace;
+})
